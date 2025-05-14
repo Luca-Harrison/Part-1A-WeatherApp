@@ -3,12 +3,35 @@
   <head>
   </head>
   <body>
-    <canvas id="drawingCanvas" width="400" height="400"></canvas>
+    <canvas id="drawingCanvas" width="250" height="500"></canvas>
     <script>
       const canvas = document.getElementById("drawingCanvas");
       const ctx = canvas.getContext("2d");
+
+      var mouse = {
+        x: 0,
+        y: 0,
+        click: false
+      }
+
+      var width = 250;
+      var height = 500;
+
+      document.addEventListener("mousemove", (e) => {
+        mouse.x = e.clientX - canvas.offsetLeft;
+        mouse.y = e.clientY - canvas.offsetTop;
+      });
+
+      document.addEventListener("click", (e) => {
+        mouse.click = true;
+      });
     </script>
-    <script src="shapes.js"></script>
+    <script src="drawing/shapes.js"></script>
+    <script src="drawing/stateObject.js"></script>
+    <script src="drawing/stateRoundedRect.js"></script>
+    <script src="state/stateController.js"></script>
+    <script src="state/defaultState.js"></script>
+    <script src="state/weatherState.js"></script>
     <script src="main.js"></script>
     <script>
       setInterval(update, 30)
