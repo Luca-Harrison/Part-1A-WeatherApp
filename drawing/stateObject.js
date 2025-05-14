@@ -19,6 +19,8 @@ class StateObject {
     checkState() {}
     update() {
 
+        this.checkState();
+
         strokeWidth(this.strokeWidth);
         if (this.redMode) {
             stroke(`rgb(${this.strokeColour.r}, 0, 0, ${this.strokeColour.a})`)
