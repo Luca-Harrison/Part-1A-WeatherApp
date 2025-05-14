@@ -6,13 +6,13 @@ class DefaultState {
       this.redMode = redMode;
     }
     
-    // addButton(x, y, w, h, r, c1, c2) {
-    //   let btn = new Button(x, y, w, h, r, c1, c2);
-    //   this.objectList.push(btn);
-    //   return btn;
-    // }
+    addButton(x, y, w, h, r, fillColour, hoverColour, strokeColour, strokeWidth) {
+      let btn = new Button(x, y, w, h, r, fillColour, hoverColour, strokeColour, strokeWidth);
+      this.objectList.push(btn);
+      return btn;
+    }
     
-    addRRect(x, y, w, h, r, fillColour = colour(0), strokeColour = colour(0, 0, 0, 0), strokeWidth = 0) {
+    addRRect(x, y, w, h, r, fillColour, strokeColour, strokeWidth) {
       let rct = new RoundedRect(x, y, w, h, r, fillColour, strokeColour, strokeWidth);
       this.objectList.push(rct);
       return rct;
