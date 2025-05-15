@@ -17,6 +17,12 @@ class DefaultState {
       this.objectList.push(rct);
       return rct;
     }
+
+    addText(txt, x, y, size, fillColour) {
+      let txtObj = new StateText(txt, x, y, size, fillColour);
+      this.objectList.push(txtObj);
+      return txtObj;
+    }
     
     exc() {
       for (let i = 0; i < this.objectList.length; i ++)
