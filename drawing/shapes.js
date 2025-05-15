@@ -47,6 +47,6 @@ function rRect(x, y, w, h, r) {
 }
 
 function text(txt, x, y, s) {
-  ctx.textStyle = `${s}px Arial`;
+  ctx.font = `${s}px Arial`;
   ctx.fillText(txt, x, y);
 }
