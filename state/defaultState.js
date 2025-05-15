@@ -1,6 +1,7 @@
 class DefaultState {
     constructor(state, redMode) {
       this.objectList = [];
+      this.groupList = [];
       
       this.state = state;
       this.redMode = redMode;
@@ -16,6 +17,21 @@ class DefaultState {
       let rct = new RoundedRect(x, y, w, h, r, fillColour, strokeColour, strokeWidth);
       this.objectList.push(rct);
       return rct;
+    }
+
+    addGroup(x, y, w, h) {
+      let group = {
+          x: x,
+          y: y,
+          w: w,
+          h: h,
+          objectList: [],
+          addToGroup: (element) => {
+              
+          }
+      };
+      this.groupList.push(group);
+      return group;
     }
     
     exc() {
