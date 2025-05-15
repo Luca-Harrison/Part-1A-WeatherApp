@@ -3,7 +3,7 @@
   <head>
   </head>
   <body>
-    <canvas id="drawingCanvas" width="250" height="500"></canvas>
+    <canvas id="drawingCanvas" width="500" height="1000"></canvas>
     <script>
       const canvas = document.getElementById("drawingCanvas");
       const ctx = canvas.getContext("2d");
@@ -14,8 +14,8 @@
         click: false
       }
 
-      var width = 250;
-      var height = 500;
+      var width = 500;
+      var height = 1000;
 
       document.addEventListener("mousemove", (e) => {
         mouse.x = e.clientX - canvas.offsetLeft;
