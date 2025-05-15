@@ -15,6 +15,6 @@ class StateText extends StateObject {
         this.text = txt;
     }
     draw() {
-        text(this.text, this.x, this.y, this.s);
+        text(this.txt, this.x, this.y, this.s);
     }
 }
