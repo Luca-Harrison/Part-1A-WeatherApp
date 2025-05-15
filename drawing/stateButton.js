@@ -14,7 +14,7 @@ class Button extends StateObject {
                      mouse.x >= this.x && mouse.x <= this.x + this.w &&
                      mouse.y >= this.y && mouse.y <= this.y + this.h;
 
-        if (this.click) this.script();
+        if (this.click) setTimeout(this.script, 60);
 
         this.state = mouse.x >= this.x && mouse.x <= this.x + this.w &&
                      mouse.y >= this.y && mouse.y <= this.y + this.h;
