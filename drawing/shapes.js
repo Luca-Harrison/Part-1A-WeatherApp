@@ -45,3 +45,8 @@ function rRect(x, y, w, h, r) {
   ctx.fill();
   ctx.stroke();
 }
+
+function text(txt, x, y, s) {
+  ctx.textStyle = `${s}px Arial`;
+  ctx.fillText(txt, x, y);
+}
