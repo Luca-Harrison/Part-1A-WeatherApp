@@ -1,4 +1,4 @@
-class StateText extends stateObject {
+class StateText extends StateObject {
     constructor(txt, x, y, s, c) {
         super(c, colour(0), colour(0), 0);
 

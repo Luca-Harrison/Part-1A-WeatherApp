@@ -1,6 +1,6 @@
 class StateController {
     constructor() {
-      this.currentState = new WeatherState(this, false);
+      this.currentState = new TestState(this, false);
     }
     changeState(newState) {
       this.currentState = newState;
