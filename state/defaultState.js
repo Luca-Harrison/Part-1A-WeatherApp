@@ -1,7 +1,6 @@
 class DefaultState {
     constructor(state, redMode) {
       this.objectList = [];
-      this.groupList = [];
       
       this.state = state;
       this.redMode = redMode;
@@ -18,21 +17,6 @@ class DefaultState {
       this.objectList.push(rct);
       return rct;
     }
-
-    addGroup(x, y, w, h) {
-      let group = {
-          x: x,
-          y: y,
-          w: w,
-          h: h,
-          objectList: [],
-          addToGroup: (element) => {
-              
-          }
-      };
-      this.groupList.push(group);
-      return group;
-    }
     
     exc() {
       for (let i = 0; i < this.objectList.length; i ++)
@@ -43,7 +27,10 @@ class DefaultState {
       this.exc();
     }
     update() {
+      this.script();
+
       for (let i = 0; i < this.objectList.length; i ++)
         this.objectList[i].update();
     }
+    script() {}
   }

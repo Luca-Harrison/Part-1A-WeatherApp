@@ -7,9 +7,9 @@ class TemperatureState extends DefaultState {
       
       this.addButton(7, 3, 10, 5, 2, colour(20), colour(10));
       
-      this.objectList[2].script = () => {
+      this.objectList[2].addScript( () => {
         state.changeState(new WeatherState(this.state, this.redMode));
-      }
+      } );
       
       this.exc();
     }
