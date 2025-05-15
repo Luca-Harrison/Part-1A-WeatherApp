@@ -10,6 +10,12 @@ class StateObject {
         this.state = 0;
 
     }
+    setX(x) {
+        this.x = x * width / 100;
+    }
+    setY(y) {
+        this.y = y * height / 100;
+    }
     setRedMode(setVal) {
 
       this.redMode = setVal;
