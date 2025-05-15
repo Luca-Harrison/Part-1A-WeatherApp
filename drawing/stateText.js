@@ -12,7 +12,7 @@ class StateText extends StateObject {
         this.s = s * width / 100;
     }
     setText(txt) {
-        this.text = txt;
+        this.txt = txt;
     }
     draw() {
         text(this.txt, this.x, this.y, this.s);
