@@ -3,32 +3,56 @@ class WeatherState extends DefaultState {
       super(state, redMode);
       
       this.addRRect(5, 2, 90, 10, 4, colour(180, 200, 220));
-      this.addText("Weather",22,9.5,8,colour(0,0,0))
+      this.addText("Weather",25,11,11,colour(0,0,0))
       let bottomBar = this.addRRect(5, 90, 90, 9.5, 4, colour(180, 200, 220));
 
       const names = ["Quality of Stargazing","Temperature","Cloud Cover","Rain","Visability","Fog Level","Light Level"];
-      let data = { "Quality of Stargazing":"Excellent","Temperature":"15\u{00B0}C","Cloud Cover":"6%","Rain":"4% Chance","Visability":"20Km","Fog Level":"Low","Light Level":"Dark"}
+      let data = { "Quality of Stargazing":"","Temperature":"","Cloud Cover":"","Rain":"","Visability":"","Fog Level":"","Light Level":""}
+      let rawData = { "Quality of Stargazing":"Excellent","Temperature":"15","Cloud Cover":"6","Rain":"4","Visability":"20","Fog Level":"Low","Light Level":"Dark"}
 
-      //Function to update the data
-      function updateData(newData) {
-        for (let key in newData){
-          if (key in data){
-            data[key] = newData[key]
-          } else {
-            console.log(key + " is not a valid key in data dictionary")
-          }
-        }
+      //Formats data so that it can be displayed in a readable way
+      function formatData(){
+        data["Quality of Stargazing"] = rawData["Quality of Stargazing"];
+        data["Temperature"] = rawData["Temperature"] + "\u{00B0}"
+        data["Cloud Cover"] = rawData["Cloud Cover"] + "%"
+        data["Rain"] = rawData["Rain"] + "% Chance";
+        data["Visability"] = rawData["Visability"] + "Km";
+        data["Fog Level"] = rawData["Fog Level"];
+        data["Light Level"] = rawData["Light Level"];
       }
+
+      formatData();
 
       let inc = 76.5 / 7;
       for (let i = 0; i < 7; i ++) {
         this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
-        this.addText(names[i],12,16 + inc * i,2,colour(180, 200, 220))
-        this.addText(data[names[i]],9,21.75 + inc * i,6,colour(180, 200, 220))
+        this.addText(names[i],12,16 + inc * i,3,colour(180, 200, 220))
+        this.addText(data[names[i]],9,22.4 + inc * i,7.5,colour(180, 200, 220))
       }
 
-      this.toggleButton = this.addButton(7, 90.75, 8, 8, 2, colour(200, 220, 240), colour(160, 180, 200));
 
+      //Function to update the data
+      /**
+       * @param newData - Object containing values as text
+       * Valid attribute names are: Quality of Stargazing, Temperature, Cloud Cover, Rain
+       * Visability, Fog Level, Light Level
+       */
+      function updateData(newData) {
+        for (let key in newData){
+          if (key in data){
+            rawData[key] = newData[key]
+          } else {
+            console.log(key + " is not a valid key in data dictionary")
+          }
+        }
+        formatData();
+      }
+
+
+
+
+
+      this.toggleButton = this.addButton(7, 90.75, 9.5, 8, 2, colour(200, 220, 240), colour(160, 180, 200));
       this.toggleButton.addScript( () => {
         this.toggleRedMode();
       } );
