@@ -3,7 +3,7 @@ var state = new StateController();
 
 function update() {
   fill('#000');
-  rect(0, 0, 250, 500);
+  rect(0, 0, width, height);
 
   state.update();
 

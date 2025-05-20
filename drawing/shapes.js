@@ -45,3 +45,12 @@ function rRect(x, y, w, h, r) {
   ctx.fill();
   ctx.stroke();
 }
+
+function text(txt, x, y, s) {
+  ctx.font = `${s}px 'Open Sans'`;
+  ctx.fillText(txt, x, y);
+}
+
+function image(img, x, y, w, h) {
+  ctx.drawImage(img, x, y, w, h);
+}
