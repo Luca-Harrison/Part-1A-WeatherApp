@@ -7,8 +7,22 @@ class WeatherState extends DefaultState {
       let bottomBar = this.addRRect(5, 90, 90, 9.5, 4, colour(180, 200, 220));
 
       const names = ["Quality of Stargazing","Temperature","Cloud Cover","Rain","Visability","Fog Level","Light Level"];
-      let data = { "Quality of Stargazing":"Excellent","Temperature":"15\u{00B0}C","Cloud Cover":"6%","Rain":"4% Chance","Visability":"20Km","Fog Level":"Low","Light Level":"Dark"}
-      
+      let data = { "Quality of Stargazing":"","Temperature":"","Cloud Cover":"","Rain":"","Visability":"","Fog Level":"","Light Level":""}
+      let rawData = { "Quality of Stargazing":"Excellent","Temperature":"15","Cloud Cover":"6","Rain":"4","Visability":"20","Fog Level":"Low","Light Level":"Dark"}
+
+      //Formats data so that it can be displayed in a readable way
+      function formatData(){
+        data["Quality of Stargazing"] = rawData["Quality of Stargazing"];
+        data["Temperature"] = rawData["Temperature"] + "\u{00B0}"
+        data["Cloud Cover"] = rawData["Cloud Cover"] + "%"
+        data["Rain"] = rawData["Rain"] + "% Chance";
+        data["Visability"] = rawData["Visability"] + "Km";
+        data["Fog Level"] = rawData["Fog Level"];
+        data["Light Level"] = rawData["Light Level"];
+      }
+
+      formatData();
+
       let inc = 76.5 / 7;
       for (let i = 0; i < 7; i ++) {
         this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
@@ -21,12 +35,15 @@ class WeatherState extends DefaultState {
       function updateData(newData) {
         for (let key in newData){
           if (key in data){
-            data[key] = newData[key]
+            rawData[key] = newData[key]
           } else {
             console.log(key + " is not a valid key in data dictionary")
           }
         }
+        formatData();
       }
+
+
 
 
 
