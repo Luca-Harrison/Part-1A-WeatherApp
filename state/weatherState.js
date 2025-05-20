@@ -32,6 +32,11 @@ class WeatherState extends DefaultState {
 
 
       //Function to update the data
+      /**
+       * @param newData - Object containing values as text
+       * Valid attribute names are: Quality of Stargazing, Temperature, Cloud Cover, Rain
+       * Visability, Fog Level, Light Level
+       */
       function updateData(newData) {
         for (let key in newData){
           if (key in data){
