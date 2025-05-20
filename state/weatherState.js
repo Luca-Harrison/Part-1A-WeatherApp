@@ -16,6 +16,20 @@ class WeatherState extends DefaultState {
         this.addText(data[names[i]],9,22.4 + inc * i,7.5,colour(180, 200, 220))
       }
 
+
+      //Function to update the data
+      function updateData(newData) {
+        for (let key in newData){
+          if (key in data){
+            data[key] = newData[key]
+          } else {
+            console.log(key + " is not a valid key in data dictionary")
+          }
+        }
+      }
+
+
+
       this.toggleButton = this.addButton(7, 90.75, 9.5, 8, 2, colour(200, 220, 240), colour(160, 180, 200));
 
       this.toggleButton.addScript( () => {
