@@ -6,10 +6,10 @@ class StateText extends StateObject {
 
         this.x = x * width / 100;
         this.y = y * height / 100;
-        this.s = s * width / 100;
+        this.s = s * height / 100;
     }
     setS(s) {
-        this.s = s * width / 100;
+        this.s = s * height / 100;
     }
     setText(txt) {
         this.txt = txt;
