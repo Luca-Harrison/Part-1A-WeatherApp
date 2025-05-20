@@ -31,14 +31,36 @@ function getWeather() {
     console.log("Wind Speed: " + wind_speed);
     console.log("Cloud Cover: " + cloud_cover);
     console.log("Visibility: " + visibility);
+
+    return {
+      temperature: temperature,
+      precipitation: precipitation,
+      wind_speed: wind_speed,
+      cloud_cover: cloud_cover,
+      visibility: visibility
+    }
   })
 }
 
-
-
-
 // Location
 
+// This function gets a list of matching locations from the Open-Meteo API
+function getLocationSuggestions(location) {
+  const locations = [
+    "Cambridge, Cambridgeshire",
+    "Plymouth, Devon",
+    "London, Greater London",
+    "Bristol, Bristol",
+    "Manchester, Greater Manchester",
+    "Liverpool, Merseyside",
+    "Sheffield, South Yorkshire",
+    "Leeds, West Yorkshire",
+    "Birmingham, West Midlands",
+    "Glasgow, Scotland",
+    "Edinburgh, Scotland",
+  ]
 
+  const suggestions = locations.filter(loc => loc.toLowerCase().includes(location.toLowerCase()));
+  return suggestions;
 
-// Celestial Bodies
+}
