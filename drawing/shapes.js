@@ -50,3 +50,7 @@ function text(txt, x, y, s) {
   ctx.font = `${s}px Arial`;
   ctx.fillText(txt, x, y);
 }
+
+function image(img, x, y, w, h) {
+  ctx.drawImage(img, x, y, w, h);
+}

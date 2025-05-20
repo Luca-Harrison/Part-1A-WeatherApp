@@ -6,6 +6,8 @@ class PlanetState extends DefaultState {
       
       this.addText('Star Information', 15, 9, 10, colour(0));
 
+      this.addImage('Smiley.svg', 10, 10, 10, 10);
+
 
       let bottomBar = this.addRRect(5, 93, 90, 105, 4, colour(180, 200, 220));
 
