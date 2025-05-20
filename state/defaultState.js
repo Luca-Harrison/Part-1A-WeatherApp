@@ -30,6 +30,29 @@ class DefaultState {
       return imgObj;
     }
     
+    addNavigationBar() {
+
+        let bottomBar = this.addRRect(5, 93, 90, 105, 4, colour(180, 200, 220));
+
+        let settingsButton = this.addButton(6, 94, 28, 5.5, 2, colour(180, 200, 220), colour(160, 180, 200));
+        let weatherButton = this.addButton(36, 94, 28, 5.5, 2, colour(180, 200, 220), colour(160, 180, 200));
+        let planetsButton = this.addButton(66, 94, 28, 5.5, 2, colour(180, 200, 220), colour(160, 180, 200));
+        this.addImage('SettingsImage.png', 16, 95, 8, 4);
+        this.addImage('CloudImage.png', 44, 94, 12, 6);
+        this.addImage('PlanetImage.svg', 75, 94.5, 10, 5);
+
+        settingsButton.addScript(() => {
+            state.changeState(new SettingState(state, redMode));
+        });
+        weatherButton.addScript(() => {
+            state.changeState(new WeatherState(state, redMode));
+        });
+        planetsButton.addScript(() => {
+            state.changeState(new PlanetState(state, redMode));
+        });
+        
+    }
+    
     exc() {
       for (let i = 0; i < this.objectList.length; i ++)
         this.objectList[i].setRedMode(this.redMode);
