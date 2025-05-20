@@ -14,6 +14,8 @@ class StateImage extends StateObject {
         this.y = y * height / 100;
         this.w = w * width / 100;
         this.h = h * height / 100;
+
+        this.visible = true;
     }
     setW(w) {
         this.w = w * width / 100;
@@ -21,8 +23,11 @@ class StateImage extends StateObject {
     setH(h) {
         this.h = h * height / 100;
     }
+
+    show()      { this.visible = true;  }
+    hide()      { this.visible = false; }
     draw() {
-        if (this.imageLoaded) {
+        if (this.imageLoaded && this.visible) {
             image(this.img, this.x, this.y, this.w, this.h);
         }
     }
