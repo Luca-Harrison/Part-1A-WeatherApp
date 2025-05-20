@@ -42,15 +42,15 @@ class DefaultState {
         this.addImage('PlanetImage.svg', 75, 94.5, 10, 5);
 
         settingsButton.addScript(() => {
-            state.changeState(new SettingState(state, redMode));
+            this.state.changeState(new SettingState(this.state, this.redMode));
         });
         weatherButton.addScript(() => {
-            state.changeState(new WeatherState(state, redMode));
+            this.state.changeState(new WeatherState(this.state, this.redMode));
         });
         planetsButton.addScript(() => {
-            state.changeState(new PlanetState(state, redMode));
+            this.state.changeState(new PlanetState(this.state, this.redMode));
         });
-        
+
     }
     
     exc() {
