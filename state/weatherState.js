@@ -8,7 +8,18 @@ class WeatherState extends DefaultState {
 
       const names = ["Quality of Stargazing","Temperature","Cloud Cover","Rain","Visability","Fog Level","Light Level"];
       let data = { "Quality of Stargazing":"Excellent","Temperature":"15\u{00B0}C","Cloud Cover":"6%","Rain":"4% Chance","Visability":"20Km","Fog Level":"Low","Light Level":"Dark"}
-      
+
+      //Function to update the data
+      function updateData(newData) {
+        for (let key in newData){
+          if (key in data){
+            data[key] = newData[key]
+          } else {
+            console.log(key + " is not a valid key in data dictionary")
+          }
+        }
+      }
+
       let inc = 76.5 / 7;
       for (let i = 0; i < 7; i ++) {
         this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
