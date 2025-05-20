@@ -3,12 +3,12 @@ class WeatherState extends DefaultState {
       super(state, redMode);
       
       this.addRRect(5, 2, 90, 10, 4, colour(180, 200, 220));
-      this.addText("Weather",25,11,11,colour(0,0,0))
+      this.addText("Weather",11,10.75,10,colour(0,0,0))
       let bottomBar = this.addRRect(5, 90, 90, 9.5, 4, colour(180, 200, 220));
 
       const names = ["Quality of Stargazing","Temperature","Cloud Cover","Rain","Visability","Fog Level","Light Level"];
       let data = { "Quality of Stargazing":"","Temperature":"","Cloud Cover":"","Rain":"","Visability":"","Fog Level":"","Light Level":""}
-      let rawData = { "Quality of Stargazing":"Excellent","Temperature":"15","Cloud Cover":"6","Rain":"4","Visability":"20","Fog Level":"Low","Light Level":"Dark"}
+      let rawData = { "Quality of Stargazing":"Excellent","Temperature":"15","Cloud Cover":"6","Rain":"100","Visability":"20","Fog Level":"Low","Light Level":"Dark"}
 
       //Formats data so that it can be displayed in a readable way
       function formatData(){
@@ -26,8 +26,8 @@ class WeatherState extends DefaultState {
       let inc = 76.5 / 7;
       for (let i = 0; i < 7; i ++) {
         this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
-        this.addText(names[i],12,16 + inc * i,3,colour(180, 200, 220))
-        this.addText(data[names[i]],9,22.4 + inc * i,7.5,colour(180, 200, 220))
+        this.addText(names[i],11,16.2 + inc * i,3,colour(180, 200, 220))
+        this.addText(data[names[i]],9,22.4 + inc * i,6,colour(180, 200, 220))
       }
 
 
@@ -52,7 +52,7 @@ class WeatherState extends DefaultState {
 
 
 
-      this.toggleButton = this.addButton(7, 90.75, 9.5, 8, 2, colour(200, 220, 240), colour(160, 180, 200));
+      this.toggleButton = this.addButton(7, 90.75, 16, 8, 2, colour(200, 220, 240), colour(160, 180, 200));
       this.toggleButton.addScript( () => {
         this.toggleRedMode();
       } );
