@@ -7,5 +7,10 @@ function update() {
 
   state.update();
 
+  if (type.click) {
+    console.log(type.cur);
+  }
+
   mouse.click = false;
+  type.click = false;
 }

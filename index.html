@@ -20,6 +20,11 @@
         y: 0,
         click: false
       }
+      
+      var type = {
+        cur: false,
+        click: false
+      }
 
       var width = 1000;
       var height = 2000;
@@ -32,6 +37,11 @@
       document.addEventListener("click", (e) => {
         mouse.click = true;
       });
+
+      document.addEventListener("keypress", (e) => {
+        type.click = true;
+        type.cur = e.key;
+      })
     </script>
     <script src="drawing/shapes.js"></script>
     <script src="drawing/stateObject.js"></script>
