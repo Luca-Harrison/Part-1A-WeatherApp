@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+
 <html>
   <head>
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+    rel="stylesheet"
+  />
   </head>
   <body>
     <canvas id="drawingCanvas" width="100%" height="100%"></canvas>
     <script>
       const canvas = document.getElementById("drawingCanvas");
-      canvas.width = innerWidth;
-      canvas.height = innerHeight;
+      canvas.width = 1000;
+      canvas.height = 2000;
       const ctx = canvas.getContext("2d");
 
       var mouse = {
@@ -16,8 +21,8 @@
         click: false
       }
 
-      var width = innerWidth;
-      var height = innerHeight;
+      var width = 1000;
+      var height = 2000;
 
       document.addEventListener("mousemove", (e) => {
         mouse.x = e.clientX - canvas.offsetLeft;
@@ -33,6 +38,7 @@
     <script src="drawing/stateRoundedRect.js"></script>
     <script src="drawing/stateButton.js"></script>
     <script src="drawing/stateText.js"></script>
+    <script src="drawing/stateImage.js"></script>
     <script src="state/stateController.js"></script>
     <script src="state/defaultState.js"></script>
     <script src="state/weatherState.js"></script>

@@ -23,6 +23,12 @@ class DefaultState {
       this.objectList.push(txtObj);
       return txtObj;
     }
+
+    addImage(src, x, y, w, h) {
+      let imgObj = new StateImage(src, x, y, w, h);
+      this.objectList.push(imgObj);
+      return imgObj;
+    }
     
     exc() {
       for (let i = 0; i < this.objectList.length; i ++)

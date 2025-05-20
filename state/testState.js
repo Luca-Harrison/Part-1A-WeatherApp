@@ -14,6 +14,15 @@ class TestState extends DefaultState {
         this.addText('Planet State', 7, 38, 10, colour(0));
         this.addText('Temperature State', 7, 48, 10, colour(0));
 
+        let bottomBar = this.addRRect(5, 93, 90, 105, 4, colour(180, 200, 220));
+
+        this.addButton(6, 94, 28, 6, 2, colour(180, 200, 220), colour(160, 180, 200));
+        this.addButton(36, 94, 28, 6, 2, colour(180, 200, 220), colour(160, 180, 200));
+        this.addButton(66, 94, 28, 6, 2, colour(180, 200, 220), colour(160, 180, 200));
+        this.addImage('SettingsImage.png', 16, 95, 8, 4);
+        this.addImage('CloudImage.png', 44, 92, 12, 10);
+        this.addImage('SettingsImage.png', 76, 95, 8, 4);
+
         settingState.addScript(() => {
             state.changeState(new SettingState(state, redMode));
         });

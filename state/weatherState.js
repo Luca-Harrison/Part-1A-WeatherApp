@@ -53,7 +53,6 @@ class WeatherState extends DefaultState {
 
 
       this.toggleButton = this.addButton(7, 90.75, 9.5, 8, 2, colour(200, 220, 240), colour(160, 180, 200));
-
       this.toggleButton.addScript( () => {
         this.toggleRedMode();
       } );

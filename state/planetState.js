@@ -4,7 +4,9 @@ class PlanetState extends DefaultState {
       
       this.addRRect(5, 2, 90, 10, 4, colour(180, 200, 220));
       
-      this.addText('Star Information', 15, 9, 10, colour(0));
+      this.addText('Star Information', 15, 9, 4.6, colour(0));
+
+      //this.addImage('Smiley.svg', 10, 10, 10, 10);
 
 
       let bottomBar = this.addRRect(5, 93, 90, 105, 4, colour(180, 200, 220));
@@ -17,8 +19,8 @@ class PlanetState extends DefaultState {
       
       let inc = 56 / 7;
       for (let i = 0; i < 7; i ++) {
-        buttons[i] = this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
-        texts[i] = this.addText(planets[i], 10,18.5 + inc * i, 7, colour(250));
+        buttons[i] = this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 3);
+        texts[i] = this.addText(planets[i], 10,18.5 + inc * i, 3.5, colour(250));
         buttonMode = 0;
       }
       
@@ -30,6 +32,7 @@ class PlanetState extends DefaultState {
           if (buttonMode != i) {
             buttons[i].setH(3 * inc - 1 + 8);
             buttons[i].setY(13.5 + inc * i);
+            texts[i].setY(18.5 + inc * i);
 
 
             for (let j = 0; j < i; j ++) {
