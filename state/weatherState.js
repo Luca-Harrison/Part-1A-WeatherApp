@@ -23,7 +23,7 @@ class WeatherState extends DefaultState {
 
       formatData();
 
-      let inc = 76.5 / 7;
+      let inc = 79 / 7;
       for (let i = 0; i < 7; i ++) {
         this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
         this.addText(names[i],11,16.2 + inc * i,3,colour(180, 200, 220))
