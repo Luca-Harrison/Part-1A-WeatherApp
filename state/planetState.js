@@ -19,7 +19,7 @@ class PlanetState extends DefaultState {
       
       let inc = 56 / 7;
       for (let i = 0; i < 7; i ++) {
-        buttons[i] = this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
+        buttons[i] = this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 3);
         texts[i] = this.addText(planets[i], 10,18.5 + inc * i, 3.5, colour(250));
         buttonMode = 0;
       }
