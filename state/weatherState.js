@@ -1,4 +1,5 @@
 class WeatherState extends DefaultState {
+
     constructor(state, redMode) {
       super(state, redMode);
       
@@ -59,4 +60,15 @@ class WeatherState extends DefaultState {
 
       this.exc();
     }
+
+    if (firstTime()) {
+      state.changeState(new LocationState(this.state, this.redMode));
+    }
+
+    this.toggleButton.addScript(() => {
+      this.toggleRedMode();
+    });
+
+    this.exc();
   }
+}
