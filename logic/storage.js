@@ -23,14 +23,6 @@ function getCookie(cname) {
   return "";
 }
 
-function firstTime() {
-  if (getCookie("firstTime") == "") {
-    setCookie("firstTime", "False")
-    return true;
-  } else {
-    return false;
-  }
-}
 
 function changeTempUnits(unit) {
   if (unit == "C") {

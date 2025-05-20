@@ -8,10 +8,7 @@ function update() {
   //Don't commit!!!
   //state.changeState(new WeatherState());
 
-  if (firstTime()) {
-    console.log("Yo")
-    state.changeState(new LocationState(this.state, this.redMode));
-  }
+
 
   state.update()
 

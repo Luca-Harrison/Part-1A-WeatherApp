@@ -34,7 +34,7 @@ function getWeather() {
 
     return {
       temperature: temperature,
-      precipitation: precipitation,
+      rain: precipitation,
       wind_speed: wind_speed,
       cloud_cover: cloud_cover,
       visibility: visibility
