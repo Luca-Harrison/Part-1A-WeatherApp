@@ -4,7 +4,7 @@ class WeatherState extends DefaultState {
       super(state, redMode);
       
       this.addRRect(5, 2, 90, 10, 4, colour(180, 200, 220));
-      this.addText("Weather",11,10.75,10,colour(0,0,0))
+      this.addText("Weather",31,9,4.6,colour(0,0,0))
       let bottomBar = this.addRRect(5, 90, 90, 9.5, 4, colour(180, 200, 220));
 
       const names = ["Quality of Stargazing","Temperature","Cloud Cover","Rain","Visability","Fog Level","Light Level"];
