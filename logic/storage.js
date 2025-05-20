@@ -26,9 +26,9 @@ function getCookie(cname) {
 function firstTime() {
   if (getCookie("firstTime") == "") {
     setCookie("firstTime", "False")
-    return True;
+    return true;
   } else {
-    return False;
+    return false;
   }
 }
 

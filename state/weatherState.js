@@ -59,11 +59,9 @@ class WeatherState extends DefaultState {
       } );
 
       this.exc();
-    }
+    
 
-    if (firstTime()) {
-      state.changeState(new LocationState(this.state, this.redMode));
-    }
+
 
     this.toggleButton.addScript(() => {
       this.toggleRedMode();
