@@ -18,7 +18,10 @@ class LocationState extends DefaultState {
 
         let inc = 10;
         for (let i = 0; i < 7; i ++) {
-            this.addButton(5, 20 + inc * i, 90, inc - 1, 4, colour(180, 200, 220), colour(160, 180, 200));
+            let location_button = this.addButton(5, 20 + inc * i, 90, inc - 1, 4, colour(180, 200, 220), colour(160, 180, 200));
+            location_button.addScript(()=> {
+                this.state.changeState(new WeatherState(this.state, this.redMode)); 
+            })
             this.addText(locations[i][0], 23, 24 + inc * i, 2, colour(0)); 
             this.addText(locations[i][1], 23, 27 + inc * i, 1.5, colour(80, 80, 80)); 
             this.addImage("images/location.svg", 10, 23 + inc * i, 8, 4); 
