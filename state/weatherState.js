@@ -4,8 +4,7 @@ class WeatherState extends DefaultState {
       super(state, redMode);
       
       this.addRRect(5, 2, 90, 10, 4, colour(180, 200, 220));
-      this.addText("Weather",11,10.75,10,colour(0,0,0))
-      let bottomBar = this.addRRect(5, 90, 90, 9.5, 4, colour(180, 200, 220));
+      this.addText("Weather",31,9,4.6,colour(0,0,0))
 
       const names = ["Quality of Stargazing","Temperature","Cloud Cover","Rain","Visability","Fog Level","Light Level"];
       let data = { "Quality of Stargazing":"","Temperature":"","Cloud Cover":"","Rain":"","Visability":"","Fog Level":"","Light Level":""}
@@ -24,7 +23,7 @@ class WeatherState extends DefaultState {
 
       formatData();
 
-      let inc = 76.5 / 7;
+      let inc = 79 / 7;
       for (let i = 0; i < 7; i ++) {
         this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
         this.addText(names[i],11,16.2 + inc * i,3,colour(180, 200, 220))
@@ -49,23 +48,7 @@ class WeatherState extends DefaultState {
         formatData();
       }
 
-
-
-
-
-      this.toggleButton = this.addButton(7, 90.75, 16, 8, 2, colour(200, 220, 240), colour(160, 180, 200));
-      this.toggleButton.addScript( () => {
-        this.toggleRedMode();
-      } );
-
-      this.exc();
-    
-
-
-
-    this.toggleButton.addScript(() => {
-      this.toggleRedMode();
-    });
+    this.addNavigationBar();
 
     this.exc();
   }
