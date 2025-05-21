@@ -8,12 +8,7 @@ function update() {
   //Don't commit!!!
   //state.changeState(new WeatherState());
 
-  if (firstTime()) {
-    state.changeState(new LocationState(state, false));
-  }
-
   state.update()
-
 
   if (type.click) {
     console.log(type.cur);
