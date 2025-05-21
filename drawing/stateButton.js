@@ -20,11 +20,11 @@ class Button extends StateObject {
         this.scripts.push(f);
     }
     checkState() {
-        this.click = mouse.click && 
+        let click = mouse.click && 
                      mouse.x >= this.x && mouse.x <= this.x + this.w &&
                      mouse.y >= this.y && mouse.y <= this.y + this.h;
 
-        if (this.click) setTimeout(() => {
+        if (click) setTimeout(() => {
             for (let i = 0; i < this.scripts.length; i++) 
                 this.scripts[i]();
             }, 30);
