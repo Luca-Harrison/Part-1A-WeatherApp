@@ -51,12 +51,7 @@ class StateTextbox extends StateObject {
     draw() {
         rRect(this.x, this.y, this.w, this.h, this.r);
 
-        
-        if (this.redMode) {
-            fill(`rgb(${this.textColour.r}, 0, 0, ${this.textColour.a})`);
-        } else {
-            fill(`rgb(${this.textColour.r}, ${this.textColour.g}, ${this.textColour.b}, ${this.textColour.a})`);
-        }
+        fill(`rgb(${this.textColour.r}, ${this.redMode * this.textColour.g}, ${this.redMode * this.textColour.b}, ${this.textColour.a})`);
 
         text(this.txt, this.x + 0.15 * this.w, this.y + 0.7 * this.h, 0.5 * this.h);
 
