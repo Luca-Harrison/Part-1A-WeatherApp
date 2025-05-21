@@ -1,6 +1,6 @@
 class StateController {
     constructor() {
-      this.currentState = new PlanetState(this, false);
+      this.currentState = new LocationState(this, false);
     }
     changeState(newState) {
       this.currentState = newState;
