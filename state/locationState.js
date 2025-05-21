@@ -20,7 +20,6 @@ class LocationState extends DefaultState {
         for (let i = 0; i < 7; i ++) {
             let location_button = this.addButton(5, 20 + inc * i, 90, inc - 1, 4, colour(180, 200, 220), colour(160, 180, 200));
             location_button.addScript(()=> {
-                console.log('this');
                 this.state.changeState(new WeatherState(this.state, this.redMode));
             })
             this.addText(locations[i][0], 23, 24 + inc * i, 2, colour(0)); 
