@@ -9,8 +9,7 @@ function update() {
   //state.changeState(new WeatherState());
 
   if (firstTime()) {
-    console.log("Yo")
-    state.changeState(new LocationState(this.state, this.redMode));
+    state.changeState(new LocationState(state, false));
   }
 
   state.update()
