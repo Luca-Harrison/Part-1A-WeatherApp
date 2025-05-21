@@ -28,15 +28,10 @@ class StateObject {
         this.checkState();
 
         strokeWidth(this.strokeWidth);
-        if (this.redMode) {
-            stroke(`rgb(${this.strokeColour.r}, 0, 0, ${this.strokeColour.a})`)
-            if (this.state == 0) fill(`rgb(${this.defaultColour.r}, 0, 0, ${this.defaultColour.a})`);
-            else fill(`rgb(${this.altColour.r}, 0, 0, ${this.altColour.a})`);
-        } else {
-            stroke(`rgb(${this.strokeColour.r}, ${this.strokeColour.g}, ${this.strokeColour.b}, ${this.strokeColour.a})`);
-            if (this.state == 0) fill(`rgb(${this.defaultColour.r}, ${this.defaultColour.g}, ${this.defaultColour.b}, ${this.defaultColour.a})`);
-            else fill(`rgb(${this.altColour.r}, ${this.altColour.g}, ${this.altColour.b}, ${this.altColour.a})`);
-        }
+        
+        stroke(`rgb(${this.strokeColour.r}, ${this.redMode * this.strokeColour.g}, ${this.redMode * this.strokeColour.b}, ${this.strokeColour.a})`);
+        if (this.state == 0) fill(`rgb(${this.defaultColour.r}, ${this.redMode * this.defaultColour.g}, ${this.redMode * this.defaultColour.b}, ${this.defaultColour.a})`);
+        else fill(`rgb(${this.altColour.r}, ${this.redMode * this.altColour.g}, ${this.redMode * this.altColour.b}, ${this.altColour.a})`);
 
         this.draw();
 

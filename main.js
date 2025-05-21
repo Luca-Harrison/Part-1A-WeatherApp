@@ -8,11 +8,7 @@ function update() {
   //Don't commit!!!
   //state.changeState(new WeatherState());
 
-  state.update()
-
-  if (type.click) {
-    console.log(type.cur);
-  }
+  state.update();
 
   mouse.click = false;
   type.click = false;
