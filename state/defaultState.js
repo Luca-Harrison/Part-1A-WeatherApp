@@ -13,6 +13,12 @@ class DefaultState {
       this.objectList.push(btn);
       return btn;
     }
+
+    addTextbox(defaultText, x, y, w, h, r, fillColour, typingColour, textColour, strokeColour, strokeWidth) {
+      let textbox = new StateTextbox(defaultText, x, y, w, h, r, fillColour, typingColour, textColour, strokeColour, strokeWidth);
+      this.objectList.push(textbox);
+      return textbox;
+    }
     
     addRRect(x, y, w, h, r, fillColour, strokeColour, strokeWidth) {
       let rct = new RoundedRect(x, y, w, h, r, fillColour, strokeColour, strokeWidth);
