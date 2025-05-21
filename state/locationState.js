@@ -6,8 +6,7 @@ class LocationState extends DefaultState {
 
 
         // Search bar to search for locations
-        this.addButton(5, 5, 90, 7, 5, colour(180, 200, 220), colour(160, 180, 200));
-        this.addText("Location", 20, 9.5, 2.5, colour(80, 80, 80)); 
+        this.addTextbox("Location", 5, 5, 90, 7, 5, colour(180, 200, 220), colour(160, 180, 200), colour(80));
         this.addImage("images/search.svg", 85, 7, 6, 3); 
         this.addImage("images/bars.svg", 8, 7, 6, 3); 
 
