@@ -20,6 +20,12 @@ class DefaultState {
     return textbox;
   }
 
+  addSlider(x, y, w, h, r, fillColour, hoverColour, strokeColour, strokeWidth) {
+    let sld = new StateSlider(x, y, w, h, r, fillColour, hoverColour, strokeColour, strokeWidth);
+    this.objectList.push(sld);
+    return sld;
+  }
+
   addRRect(x, y, w, h, r, fillColour, strokeColour, strokeWidth) {
     let rct = new RoundedRect(x, y, w, h, r, fillColour, strokeColour, strokeWidth);
     this.objectList.push(rct);

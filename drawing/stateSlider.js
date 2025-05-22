@@ -1,0 +1,40 @@
+class StateSlider extends StateObject {    
+    constructor(x, y, w, h, r, fillColour = colour(0), hoverColour = colour(0), strokeColour = colour(0, 0, 0, 0), strokeWidth = 0) {
+        super(fillColour, hoverColour, strokeColour, strokeWidth);
+
+        this.x = x * width / 100;
+        this.y = y * height / 100;
+        this.w = w * width / 100;
+        this.h = h * height / 100;
+        this.r = r * width / 100;
+
+        this.scripts = [];
+    }
+    setW(w) {
+        this.w = w * width / 100;
+    }
+    setH(h) {
+        this.h = h * height / 100;
+    }
+    addScript(f) {
+        this.scripts.push(f);
+    }
+    checkState() {
+        let click = mouse.click && 
+                     mouse.x >= this.x && mouse.x <= this.x + this.w &&
+                     mouse.y >= this.y && mouse.y <= this.y + this.h;
+
+        if (click) setTimeout(() => {
+            for (let i = 0; i < this.scripts.length; i++) 
+                this.scripts[i]();
+            }, 30);
+            
+
+        this.state = mouse.x >= this.x && mouse.x <= this.x + this.w &&
+                     mouse.y >= this.y && mouse.y <= this.y + this.h;
+    }
+    draw() {
+        rRect(this.x, this.y + 0.4 * this.h, this.w, 0.2 * this.h, 0.1 * this.h);
+        rRect(this.x, this.y, this.h, this.h, this.r);
+    }
+}
