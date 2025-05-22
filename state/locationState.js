@@ -10,6 +10,8 @@ class LocationState extends DefaultState {
         this.addImage("images/search.svg", 85, 7, 6, 3); 
         this.addImage("images/bars.svg", 8, 7, 6, 3); 
 
+      this.addSlider(10, 10, 50, 10, 2, colour(200), colour(150));
+
         // Each individual location button 
         let locations = [["Cambridge", "Cambridgeshire"], ["Girton", "Cambridgeshire"], 
             ["London", "Greater London"], ["Manchester", "Greater Manchester"], ["Plymouth", "Devon"], 
