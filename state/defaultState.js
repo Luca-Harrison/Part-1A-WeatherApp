@@ -67,6 +67,22 @@ class DefaultState {
 
   }
 
+  addBasicContent() {
+      this.addImage('graphs1.png', 8,40,84,27.6);
+
+      let back = this.addButton(8.5, 4.5, 10.2, 5.1, 4, colour(180,200,220),colour(167, 186, 204));
+      this.addImage('images/back-arrow.svg', 8.5,4.5,10,5);
+
+      let location = "Cambridge"
+
+      back.addScript(() => {
+          this.state.changeState(new WeatherState(this.state, this.redMode));
+      });
+
+      this.addText(location, 30, 20,4,colour(180, 200, 220));
+
+  }
+
   exc() {
     for (let i = 0; i < this.objectList.length; i ++)
       this.objectList[i].setRedMode(this.redMode);

@@ -10,7 +10,7 @@ class WeatherState extends DefaultState {
 
       const names = ["Quality of Stargazing","Temperature","Cloud Cover","Rain","Visibility","Fog Level","Light Level"];
       let data = { "Quality of Stargazing":"","Temperature":"","Cloud Cover":"","Rain":"","Visibility":"","Fog Level":"","Light Level":""}
-      let rawData = { "Quality of Stargazing":"Excellent","Temperature":"15","Cloud Cover":"6","Rain":"100","Visibility":"20","Fog Level":"Low","Light Level":"Dark"}
+      let rawData = { "Quality of Stargazing":"Excellent","Temperature":"15","Cloud Cover":"6","Rain":"12","Visibility":"20","Fog Level":"Low","Light Level":"Dark"}
 
       //Formats data so that it can be displayed in a readable way
       function formatData(){
@@ -35,15 +35,15 @@ class WeatherState extends DefaultState {
       }
 
       buttons[1].addScript(() => {
-        this.state.changeState(new TemperatrueState(this.state, this.redMode));
+        this.state.changeState(new TemperatrueState(this.state, this.redMode, rawData["Temperature"]));
       });
 
       buttons[2].addScript(() => {
-        this.state.changeState(new CloudCoverState(this.state, this.redMode));
+        this.state.changeState(new CloudCoverState(this.state, this.redMode, rawData["Cloud Cover"]));
       });
 
       buttons[3].addScript(() => {
-        this.state.changeState(new RainState(this.state, this.redMode));
+        this.state.changeState(new RainState(this.state, this.redMode, rawData["Rain"]));
       });
 
       //Function to update the data
