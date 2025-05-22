@@ -1,4 +1,4 @@
-class StateSlider extends StateObject {    
+class StateSlider extends StateObject { // Allow slider objects to be added to the states
     constructor(x, y, w, h, r, fillColour = colour(0), hoverColour = colour(0), strokeColour = colour(0, 0, 0, 0)) {
         super(fillColour, hoverColour, strokeColour, 0);
 
@@ -8,7 +8,7 @@ class StateSlider extends StateObject {
         this.h = h * height / 100;
         this.r = r * width / 100;
 
-        this.val = 1;
+        this.val = 1; // Value for the 
 
         this.scripts = [];
 

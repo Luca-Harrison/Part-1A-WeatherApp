@@ -1,4 +1,4 @@
-class RoundedRect extends StateObject {
+class RoundedRect extends StateObject { // Allow rounded rectangles to be added to states
     constructor(x, y, w, h, r, fillColour = colour(0), strokeColour = colour(0, 0, 0, 0), strokeWidth = 0) {
         super(fillColour, colour(0), strokeColour, strokeWidth);
 
@@ -8,7 +8,7 @@ class RoundedRect extends StateObject {
         this.h = h * height / 100;
         this.r = r * width / 100;
     }
-    draw() {
+    draw() { // Draw rounded rectangle
         rRect(this.x, this.y, this.w, this.h, this.r);
     }
 }
