@@ -31,6 +31,7 @@ class LocationState extends DefaultState {
 
       this.location_button[i] = this.addButton(5, 20 + inc * i, 90, inc - 1, 4, colour(180, 200, 220), colour(160, 180, 200));
       this.location_button[i].addScript(() => {
+        changeLocation(locations[i][0]);
         this.state.changeState(new WeatherState(this.state, this.redMode));
       })
       this.location_names_1[i] = this.addText(locations[i][0], 23, 24 + inc * i, 2, colour(0));
