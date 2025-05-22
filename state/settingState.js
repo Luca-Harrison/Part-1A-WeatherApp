@@ -58,7 +58,7 @@ class SettingState extends DefaultState {
             
             if(item.control == "slider"){
               item.slider = this.addSlider(35, currY-2, 50, 2, 2, colour(180, 200, 220), colour(160, 180, 200), colour(80));
-              item.slider.val = 0;
+              item.slider.val = redMode;
               item.slider.addScript(() => { if(item.onSliderChange) item.onSliderChange(item, item.slider.val) });
             }
 
