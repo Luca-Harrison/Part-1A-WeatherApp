@@ -1,3 +1,5 @@
+
+
 class WeatherState extends DefaultState {
 
     constructor(state, redMode) {
@@ -23,13 +25,18 @@ class WeatherState extends DefaultState {
 
       formatData();
 
+      let buttons = [];
+
       let inc = 79 / 7;
       for (let i = 0; i < 7; i ++) {
-        this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
+        buttons[i] = this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 2);
         this.addText(names[i],11,16.2 + inc * i,3,colour(180, 200, 220))
         this.addText(data[names[i]],9,22.4 + inc * i,6,colour(180, 200, 220))
       }
 
+      buttons[2].addScript(() => {
+        this.state.changeState(new CloudCoverState(this.state, this.redMode));
+      });
 
       //Function to update the data
       /**
@@ -48,8 +55,8 @@ class WeatherState extends DefaultState {
         formatData();
       }
 
-    this.addNavigationBar();
-
-    this.exc();
+      //Adds bottom navigation bar
+      this.addNavigationBar();
+      this.exc();
   }
 }
