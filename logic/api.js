@@ -46,21 +46,16 @@ function getWeather() {
 
 // This function gets a list of matching locations from the Open-Meteo API
 function getLocationSuggestions(location) {
-  const locations = [
-    "Cambridge, Cambridgeshire",
-    "Plymouth, Devon",
-    "London, Greater London",
-    "Bristol, Bristol",
-    "Manchester, Greater Manchester",
-    "Liverpool, Merseyside",
-    "Sheffield, South Yorkshire",
-    "Leeds, West Yorkshire",
-    "Birmingham, West Midlands",
-    "Glasgow, Scotland",
-    "Edinburgh, Scotland",
-  ]
+  let locations = [["Cambridge", "Cambridgeshire"], ["Girton", "Cambridgeshire"],
+  ["London", "Greater London"], ["Manchester", "Greater Manchester"], ["Plymouth", "Devon"],
+  ["Rochester", "Kent"], ["Peterborough", "Cambridgeshire"]];
 
-  const suggestions = locations.filter(loc => loc.toLowerCase().includes(location.toLowerCase()));
-  return suggestions;
+  const suggestions = locations.filter(loc => loc[0].toLowerCase().includes(location.toLowerCase()));
+  // return the index of the suggestions
+  let suggestionsIndex = [];
+  for (let i = 0; i < suggestions.length; i++) {
+    suggestionsIndex.push(locations.indexOf(suggestions[i]));
+  }
+  return suggestionsIndex;
 
 }
