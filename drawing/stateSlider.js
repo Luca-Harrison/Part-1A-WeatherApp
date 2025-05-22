@@ -13,8 +13,11 @@ class StateSlider extends StateObject { // Allow slider objects to be added to t
 
         this.scripts = [];
 
+        // Script to move the pointer
         this.addScript(() => {
             this.val = (mouse.x - this.x - this.h /2) / (this.w - this.h / 2);
+
+            // Make sure the value is non - negative
             this.val = this.val < 0 ? 0 : this.val;
         });
     }
