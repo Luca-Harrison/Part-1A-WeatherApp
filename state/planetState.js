@@ -3,25 +3,24 @@ class PlanetState extends DefaultState {
       super(state, redMode);
 
 
-      
+      // top bar and title
       this.addRRect(5, 2, 90, 10, 4, colour(180, 200, 220));
-      
       this.addText('Star Information', 15, 9, 4.6, colour(0));
 
 
 
-
+      // setup arrays and offsets
       let buttons = [];
       let texts = [];
       let graphs = [];
       let buttonMode = -1;
-
-      let planets = ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
-      
+      let planets = ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Betelgeuse"]
       let OFFSET = 5;
       let OFFSETGRAPH = 7;
-      
       let inc = 56 / 7;
+
+
+      // make 7 buttons
       for (let i = 0; i < 7; i ++) {
         buttons[i] = this.addButton(7, 13.5 + inc * i, 86, inc - 1, 4, colour(40), colour(15), colour(100), 3);
         texts[i] = this.addText(planets[i], 10,13.5 + OFFSET + inc * i, 3.5, colour(250));
@@ -31,7 +30,7 @@ class PlanetState extends DefaultState {
       }
 
 
-
+      // logic for collapsable buttons
       for (let i = 0; i < 7; i ++) {
 
         buttons[i].addScript( () => {
@@ -80,7 +79,7 @@ class PlanetState extends DefaultState {
 
       }
 
-
+      // add navigation bar
       this.addNavigationBar();
 
       
