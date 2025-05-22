@@ -10,7 +10,10 @@ class LocationState extends DefaultState {
         this.addImage("images/search.svg", 85, 7, 6, 3); 
         this.addImage("images/bars.svg", 8, 7, 6, 3); 
 
-      this.addSlider(10, 10, 50, 10, 2, colour(200), colour(150));
+        let redModeSlider = this.addSlider(10, 15, 50, 2, 2, colour(180, 200, 220), colour(160, 180, 200), colour(80));
+        redModeSlider.addScript(() => {
+            this.setRedMode(redModeSlider.val);
+        });
 
         // Each individual location button 
         let locations = [["Cambridge", "Cambridgeshire"], ["Girton", "Cambridgeshire"], 
