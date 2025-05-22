@@ -1,4 +1,4 @@
-function colour(r, g = r, b = r, a = 1) {
+function colour(r, g = r, b = r, a = 1) { // Returns a dictionary of colour components
   return {
     r: r,
     g: g,
@@ -7,7 +7,7 @@ function colour(r, g = r, b = r, a = 1) {
   };
 }
 
-function fill(fillObj) {
+function fill(fillObj) { // Sets the fill mode for the canvas
   ctx.fillStyle = fillObj;
 }
 
