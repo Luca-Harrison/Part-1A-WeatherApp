@@ -1,4 +1,4 @@
-function colour(r, g = r, b = r, a = 1) {
+function colour(r, g = r, b = r, a = 1) { // Returns a dictionary of colour components
   return {
     r: r,
     g: g,
@@ -7,33 +7,33 @@ function colour(r, g = r, b = r, a = 1) {
   };
 }
 
-function fill(fillObj) {
+function fill(fillObj) { // Sets the fill mode for the canvas
   ctx.fillStyle = fillObj;
 }
 
-function stroke(strokeObj) {
+function stroke(strokeObj) { // Sets the stroke mode for the canvas
   ctx.strokeStyle = strokeObj;
 }
 
-function strokeWidth(w) {
+function strokeWidth(w) { // Sets the stroke width for the canvas
   ctx.lineWidth = w;
 }
 
-function rect(x, y, w, h) {
+function rect(x, y, w, h) { // Draw a rectangle
   ctx.beginPath();
   ctx.fillRect(x, y, w, h);
   ctx.fill();
   ctx.stroke();
 }
 
-function circle(x, y, r) {
+function circle(x, y, r) { // Draw a circle
   ctx.beginPath();
   ctx.arc(x, y, r, 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
 }
 
-function rRect(x, y, w, h, r) {
+function rRect(x, y, w, h, r) { // Draws a rounded rectangle
   ctx.beginPath();
   
   ctx.moveTo(x+r, y);
@@ -46,11 +46,11 @@ function rRect(x, y, w, h, r) {
   ctx.stroke();
 }
 
-function text(txt, x, y, s) {
+function text(txt, x, y, s) { // Draws text
   ctx.font = `${s}px 'Open Sans'`;
   ctx.fillText(txt, x, y);
 }
 
-function image(img, x, y, w, h) {
+function image(img, x, y, w, h) { // Draws image
   ctx.drawImage(img, x, y, w, h);
 }
