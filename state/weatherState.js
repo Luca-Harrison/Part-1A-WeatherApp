@@ -34,12 +34,16 @@ class WeatherState extends DefaultState {
         this.addText(data[names[i]],9,22.4 + inc * i,4,colour(180, 200, 220))
       }
 
-
-
-
+      buttons[1].addScript(() => {
+        this.state.changeState(new TemperatrueState(this.state, this.redMode));
+      });
 
       buttons[2].addScript(() => {
         this.state.changeState(new CloudCoverState(this.state, this.redMode));
+      });
+
+      buttons[3].addScript(() => {
+        this.state.changeState(new RainState(this.state, this.redMode));
       });
 
       //Function to update the data
